@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SportWears</title>
+    <link rel="stylesheet" type="text/css" href="./css/Arquitectura.css">
+    <link rel="shortcut icon" href="./image/logom.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header  class="Encabezado">
+        <nav class="nav conteiner" id="nav">
+            <h2 class="nav_logo">UAEH.</h2>
+
+            <ul class="nav_links">
+                
+                    <li class="nav__menu">
+                        <a href="Index.html" class="nav_link">Inicio</a>
+                    </li>
+                    <li class="nav__menu">
+                        <a href="Analisis.html" class="nav_link">Análisis y Diseños de Sistemas</a>
+                    </li>
+                   
+                    <li class="nav__menu">
+                        <a href="Metodo.html" class="nav_link">Métodos Numéricos</a>
+                    </li>
+            </ul>
+            <a href="#nav"  class="nav_hamburguer">
+                <img src="./image/icons8-menu-squared-50.png" class="nav_icono">
+            </a>
+            <a href="#"  class="nav_close">
+                <img src="./image/icons8-cancel-50.png" class="nav_icono">
+            </a>
+        </nav>
+        <section class="textos-header">
+            <h1>Arquitectura de computadoras </h1>
+            <h3>Ingrid Berenice Reyes Escudero</h3>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;" >
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #fff;"></path>
+            </svg>
+        </div>
+    </header>
+    <main>
+        <section class="contenedor Arquitectura">
+            <h3 class="titulo">Medidor de Temperatura con indicador visual.</h3>
+                    <div class="contenido-textos">
+                        <h4>¿Que Elaboramos?</h4>
+                        <p>En esta ocasión les traemos un circuito electrónico medidor de temperatura con indicador 
+                        visual por lo que la temperatura se visualizara en unos diodos leds, este circuito es analógico,
+                        elaboramos un sensor de temperatura digital el circuito en una Protoboard.<br><br>
+                        La temperatura como una variable física ha sido cuantificada de innumerables formas,
+                        empleando diferente tecnologías cada vez más profesionales, hoy en día estos circuitos son construidas a base de componentes SMD, 
+                        en nuestro caso por ahorrar dinero y tiempo lo vamos a realizar con componentes electrónicos muy conocidos y fácil de encontrar en el mercado electrónico, 
+                        a continuación les muestro el diagrama.
+                        </p>
+                        <h3><span>1</span>Materiales</h3>
+                        <p> 1) 1 Circuito integrado el LM358.<br>
+                            2) 1 Circuito integrado el LM3915.<br>
+                            3) 1 Condensador electrolítico de 10uF/16v.<br>
+                            4) 1 Diodo zener de 5v/1w.<br>
+                            5) 1 Resistencia de 330Ω.<br>
+                            6) 1 Resistencia de 1kΩ.<br>
+                            7) 1 Resistencia de 3.6kΩ.<br>
+                            8) 7 Resistencia de 470Ω.<br>
+                            9) 2 Diodos leds de color rojo.<br>
+                            10) 2 Diodos leds de color naranja y/o amarillo.<br>
+                            11) 3 Diodos leds de color rojo.<br>
+                            12) 1 Sensor de temperatura el LM35.<br>
+                            13) 1 Bornera de 2 pines, para la entrada de voltaje de 12v.<br>
+                            14) 1 Una fuente de alimentación de 12v/0.5A.<br>
+                        </p>
+                        <h3><span>2</span>Descripción de Materiales</h3>
+                        <h4>LM35</h4>
+                        <p>Este es un sensor de temperatura, que produce una variación de 10mV por grado centígrado (°C) en su voltaje de salida, 
+                            dependiendo de la variación de la temperatura.</p>
+                            <center>
+                                <img src="./image/LM35.jpg" class="imagen-about-us" eight="150px" width="150">
+                            </center>
+                            <h4>LM358</h4>
+                            <p>Tiene una amplia utilidad en diversos campos de la electrónica y es un circuito de fácil implementación, 
+                            en nuestro caso lo utilizamos para acoplar el sensor al resto del circuito y amplifica el voltaje de salida del mismo, 
+                            para que pueda ser visualizado con la ayuda del LM3915.</p> 
+                            <center>
+                                <img src="./image/LM358.jpg" class="imagen-about-us" eight="150px" width="250">
+                            </center>
+                            <h4>LM3915</h4>
+                            <p>Se refiere a un circuito integrado que permite visualizar el nivel de un voltaje analógico de entrada al compararlo con un valor de referencia, 
+                                presentando una escala de 10 pasos con una proporción de 3 dB cada uno.
+                                Puede manejar tanto dispositivos led como pantallas LCD.</p> 
+                            <center>
+                                <img src="./image/LM3915.png" class="imagen-about-us" eight="150px" width="250">
+                            </center>
+                            <h4>Condensador electrolítico</h4>
+                            <p>Se utiliza para modular la señal en fuentes de alimentación. 
+                                También como oscilador o generador de frecuencias. 
+                                La aplicación típica del condensador electrolítico es incrementar la potencia eléctrica en momentos puntuales que necesitan una fuerte descarga,
+                                como ocurre con los flashes de las cámaras fotográficas</p> 
+                            <center>
+                                <img src="./image/condesador.jpg" class="imagen-about-us" eight="150px" width="250">
+                            </center>
+                            <h4>Diodo zener</h4>
+                            <p>están diseñados para mantener un voltaje fijo a través del diodo cuando se polariza inversamente. 
+                                Esta capacidad se utiliza para proporcionar voltajes de referencia conocidos, 
+                                una operación importante en las fuentes de alimentación.</p> 
+                            <center>
+                                <img src="./image/diodo.jpg" class="imagen-about-us" eight="150px" width="250">
+                            </center>
+                           
+                                    <h4>Resistencias</h4>
+                                    <p>La resistencia o resistor es un componente ubicado en prácticamente todos los circuitos eléctricos.
+                                    Su misión es alterar o modificar el paso de la corriente y en otros casos para generar calor.</p>
+                                    <center> 
+                                            <img src="./image/330_R.jpg" eight="150px" width="150">                                          
+                                            <img src="./image/1_R.jpg" eight="150px" width="150px">   
+                                            <img src="./image/3.6_R.jpg" eight="150px" width="150px">                        
+                                            <img src="./image/470_R.jpg" eight="150px" width="150px">
+                                    </center>
+                                    <h4>Diodos leds</h4>
+                                    <p>Un diodo LED es un dispositivo que permite el paso de corriente en un solo sentido y que al ser polarizado emite un haz de luz. 
+                                        Trabaja como un diodo normal pero al recibir corriente eléctrica emite luz. 
+                                        Los LED trabajan aproximadamente con corriente de 2V</p>
+                                    <center> 
+                                            <img src="./image/blanco.jpg" eight="150px" width="150">                                          
+                                            <img src="./image/verde.jpg" eight="150px" width="150px">   
+                                            <img src="./image/rojo.jpg" eight="150px" width="150px">                        
+                                            <img src="./image/azul.jpg" eight="150px" width="150px">
+                                            <img src="./image/naranja.jpg" eight="150px" width="150px">
+                                    </center>
+                                    <h4>Bornera de 2 pines</h4>
+                                        <p>Una clema (también conocido como bornera o regleta)
+                                        es un tipo de conector eléctrico en el que un cable se aprisiona contra una pieza metálica mediante el uso de un tornillo.</p> 
+                                    <center>
+                                        <img src="./image/bornera.jpg" class="imagen-about-us" eight="150px" width="250">
+                                     </center>
+                        <h3><span>3</span>Prototipo Digital</h3>
+                        <center>
+                            <img src="./image/prototipo.jpg" class="imagen-about-us"  >
+                        </center>
+                      </div>
+                  </div>
+
+        </section>
+
+        <section class="portafolio">
+			<div class="contenedor">
+                <center>
+				<h2 class="video">Tutorial "Medidor de Temperatura"</h2>              
+                    <video src="./image/medidor_temp.mp4" controls height="400px" width="600px" autoplay muted loop></video>
+                </center>
+            </div>
+        </section>
+    </main>
+    <footer>
+		<div class="contenedor-footer">
+			<div class="content-foo">
+				<h4>Telefono</h4>
+				<p>+525567906617</p>
+			</div>
+			<div class="content-foo">
+				<h4>Email</h4>
+				<p>@SportWears.com.mx</p>
+			</div>
+			<div class="content-foo">
+				<h4>Localidad</h4>
+				<p>Haciendas de tizayuca, Hidalgo, Temascaltepec#136</p>
+			</div>	
+		</div>
+		<h2 class="titulo-final">&copy; Boutique Sport Wears| ROPA DEPORTIVA| Universidad Autonoma del Estado de Hidalgo</h2>
+	</footer>
+    
+</body>
+</html>

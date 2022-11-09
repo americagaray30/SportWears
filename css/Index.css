@@ -1,0 +1,500 @@
+*{
+	margin: 0; /*establece el margen para los cuatro lados*/
+	padding: 0; /*establece el espacio de relleno requerido por todos los lados de un elemento*/
+	box-sizing: border-box; /* b-sizing es usada para ajustar el siguiente comportamiento por defecto para el tamaño de la caja y */
+	/*b-boxle dice al navegador tomar en cuenta para cualquier valor que se especifique de borde o de relleno para el ancho o alto de un elemento.*/
+}
+body{/*cuerpo de la pagina*/
+	font-family: 'Roboto Condensed', sans-serif; /*tipo de letras*/
+}
+.Encabezado{/*el tamaño y color del nombre de la pagina*/
+	min-height: 500px; /*minimo del tamaño*/
+	height: 100vh;
+	color: #fff;
+}
+
+
+header{/*header es el encabezado de un sitio web*/
+	width: 100%;
+	height:600px;
+	background: #34495E; /*define los valores individuales del fondo en una única regla CSS*/
+	background: -webkit-linear-gradient(to right, hsla(351, 65%, 10%, 0.288),hsla(247, 68%, 5%, 0.226)), url(../image/ropa-deportiva-mujer.jpg); /*permite crear fondos degradados*/
+	background: linear-gradient(to right, hsla(53, 80%, 2%, 0.322),hsla(28, 29%, 10%, 0.336)), url(../image/ropa-deportiva-mujer.jpg); /*permite crear fondos degradados*/
+	background-size: cover; /*especifica el tamaño de las imágenes de fondo. y*/
+	/* cover escala la imagen al mínimo tamaño, manteniendo también las proporciones, para que ocupe todo el contenedor.  */
+	background-attachment: fixed; /*determina si la posición de la imagen de fondo será fija dentro de la pantalla o se desplazará con su bloque contenedor.*/
+	/* fixed hace que un elemento se coloque respecto al viewport, Le dices dónde posicionarse al elemento*/
+	position: relative; /*la posisicion*/
+	
+	
+}
+
+.conteiner{/*enlaces de navegación aqui manegamos el contenido de la pagina donde aplicamos el diseño*/
+	margin: 0 auto;
+	width: 90%;
+	max-width: 1200px; /*coloca el máximo ancho a un elemento*/
+	overflow: hidden; /*especifica: si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido*/
+	/*hidden hace que la caja del elemento sea invisible*/
+}
+
+.nav{ /*aqui utilisamos un Id para dirigirnos a nuestro menu*/
+	--state-close: scale(0);/*state determina si una animación está en ejecución o en pausa*/
+	--state-hamburguer: scale(1);/*scale define una transformación que modifica el tamaño de un elemento en el plano 2D*/
+	--state-menu: translate(-100%);/*el menu se dirije a la derecha de la pagina*/
+	
+	padding: 40px 0;
+	display: grid; /*especifica si un elemento es tratado como block or inline element y el diseño usado por sus hijos*/
+	/*grid se puede utilizar para lograr muchos diseños diferentes  en este caso se utilizo para dividir el menu*/
+	justify-content: space-between;/*define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor.*/
+	/*space-between los elementos aparecen distribuidos uniformemente*/
+	align-items: center; /*controlan la alineación de nuestros elementos flexibles en el eje transversal*/
+	grid-template-columns: repeat(2, max-content); /*define el nombre de las líneas y las funciones de tamaño de línea de grid columns.*/
+	
+}
+
+.nav:target{/*target estibiliza el elemento objetivo de una URI que contiene un identificador de fragmento */
+	--state-menu: translate(0);
+	--state-close: scale(1);
+	--state-hamburguer: scale(0);
+}	
+
+.nav_logo{/*aqui manegamos la letra del logo SportWears y su tamaño*/
+	font-size: 2.5rem;
+	z-index: 1;/*indica el orden de un elemento posicionado y sus descendientes.*/
+}
+
+.nav_hamburguer,/*este apartado se utilizo para el menu dezplegable del menu icono menu y close*/
+.nav_close{
+	cursor:pointer;/*permite seleccionar un puntero entre los disponibles en el sistema operativo*/
+	/*pointer muestra en el puntero una mano que puede pinchar sobre el elemento*/
+	grid-column: -2/-1; /* permite crear columnas y filas de distintos tamaños.*/
+	grid-row: 1/2;/* permite crear columnas y filas de distintos tamaños.*/
+	/*Los numero -2/-1 de la penultima linea hasta la ultima y 1/2 desde laprimera a la segunda fila*/
+}
+.nav_hamburguer{ /*se oculta el close del menu*/
+	transform: var(--state-hamburguer);/*te permite modificar el espacio de coordenadas del modelo*/
+	/*var Comprueba la Tabla de compabilidad de navegadores cuidadosamente antes de usarla en producción*/
+}
+
+.nav_close{ /*se muestra el close una vez que enu sea abierto*/
+	transform: var(--state-close);
+}
+
+.nav_icono{ /*aqui se maneja el tamaño de los icono hamburguer y close*/
+	width: 40px;
+}
+.nav_links{ /*lo utilizamos para los enlances de las paginas de esta misma como metodos, analisis, arquitecturas*/
+	background-color: #000000;
+	position: absolute;
+	top: 0;/*especifica parte de la posición de un elemento posicionado*/
+	bottom:0;/*especifica parte de la posición de un elemento  es decir, con una posición determinada por código*/
+	left: 0;/*especifica parte de la posición de un elemento */
+	right: 0;/*especifica parte de la posición de un elemento*/
+	padding: 0;
+
+	display: grid;
+	align-content: center;
+	gap: 2em; /*nos permite determinar los espaciados entre los elementos.*/
+	padding-left: 5%;
+
+	transform: var(--state-menu);
+	transition: .3s transform;
+}
+.nav__menu{
+	list-style: none;
+
+}
+.nav_link{
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+}
+
+
+
+  /*hearder*/
+  /*Aqui indicamos el inicio de nuestros productos*/
+  .contenedor{
+	padding: 60px 0; 
+	width: 90%;
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+
+}
+.titulo{
+	color: #34495E;
+	font-size: 30px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+header .textos-header{
+	display: flex;
+	height: 430px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+
+}
+.textos-header h1{
+	font-size: 50px;
+	color: #fff;
+}
+.textos-header h2{
+	font-size: 30px;
+	font-weight: 300;
+	color: #fff;
+
+}
+
+.wave{
+	position: absolute;
+	bottom: 0;
+	width: 100%
+}
+/* About us */
+main .sobre-nosotros{
+	padding: 30px 0 60px 0;
+ }
+.contenedor-sobre-nosotros{
+	display: flex;
+	justify-content:space-around;
+}
+
+.imagen-about-us{
+	width: 48%;	
+}
+
+.sobre-nosotros .contenido-textos{
+	width: 40%;
+}
+
+.contenido-textos h3{
+	margin-bottom: 15px;
+}
+
+.contenido-textos h3 span{
+	background: #34495E;
+	color: #fff;
+	border-radius: 50%;
+	display: inline-block;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	box-shadow: 0 0 6px 0 rgba(0, 0,0, 5);
+	margin-right: 6px;
+}
+
+.contenido-textos p{
+padding: 0px 0px 30px 15px;
+text-align: justify;
+}
+
+/*galeria*/
+.portafolio{
+	background: #f2f2f2;
+}
+.galeria-port{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+.imagen-port{
+	width: 24%;
+	margin-bottom: 10px;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	box-shadow: 0 0 6px rgb(0,0,0,.5);
+}
+
+.imagen-port> img{
+	width: 100% ;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.hover-galeria{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	transform: scale(0);
+	background: hsla(273, 22%, 24%, 0.7);
+	transition: transform .5s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hover-galeria > img{
+	width: 50px;
+}
+.hover-galeria p{
+	color:#fff;
+}
+
+.imagen-port:hover .hover-galeria{
+	transform: scale(1);
+}
+/*clientes */
+.cards{
+	display:flex;
+	justify-content: space-evenly;
+}
+.cards .card{
+	background: #34495E;
+	display: flex;
+	width: 46%;
+	height: 200px;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 5px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+}
+
+.cards .card img{
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	display: block;
+}
+
+.cards .card > .contenido-texto-card{
+	width: 40%;
+	color: #fff;
+}
+.cards .card > .contenido-texto-card{
+	font-weight: 300;
+	padding-top:  5px;
+}
+
+.about-services{
+	background: #f2f2f2;
+	padding-bottom:30px ;
+}
+
+.servicio-cont{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.servicio-ind{
+	width: 28%;
+	text-align: center;
+}
+.servicio-ind img{
+	width: 100%;
+
+}
+.servicio-ind h3 {
+	margin:  10px 0;
+}
+.servicio-ind p{
+	font-weight: 300;
+	text-align: justify;
+}
+ footer{
+	background: #414141;
+	padding:  60px 0 30px 0;
+	margin:  auto;
+	overflow:  hidden;
+ }
+ .contenedor-footer{
+	display: flex;
+	width: 90%;
+	justify-content: space-evenly;
+	margin:  auto;
+	padding-bottom: 50px;
+	border-bottom:1px solid #ccc;
+ }
+ .content-foo{
+	text-align: center;
+	
+ }
+ .content-foo h4{
+	color: #fff;
+	border-bottom:  3px solid #ff0;
+	padding-bottom: 5px;
+	margin-bottom: 10px;	
+ }
+ .content-foo h4{
+	color: #ccc;	
+ }
+ .content-foo p{
+	color: #ccc;	
+ }
+ .titulo-final{
+	text-align: center;
+	font-size: 24px;
+	margin: 20px 0;
+	color:#9e9797;
+ }
+@media(min-width:768px){
+	.nav{ /*aqui utilisamos un Id para dirigirnos a nuestro menu*/
+		
+		--state-hamburguer: scale(0);/*scale define una transformación que modifica el tamaño de un elemento en el plano 2D*/
+		--state-menu: translate(0);/*el menu se dirije a la derecha de la pagina*/
+		
+	}
+	
+	.nav:target{/*target estibiliza el elemento objetivo de una URI que contiene un identificador de fragmento */
+		
+		--state-close: scale(0);
+		
+	}	
+	.nav_links{ /*lo utilizamos para los enlances de las paginas de esta misma como metodos, analisis, arquitecturas*/
+		padding: 0;
+		background-color: unset;
+		position: unset;
+		gap: 1.5em; /*nos permite determinar los espaciados entre los elementos.*/
+		grid-auto-flow:column ;
+
+		transform: unset;
+		grid-column: -2/-1;
+		grid-row: 1/2;
+	}
+
+	.nav_link{
+		font-size:1rem ;
+		letter-spacing: none;
+	}
+	
+}
+ @media only screen and (min-width: 560px){
+	
+
+	.nav__menu{
+		flex-direction: row;
+	}
+
+	.nav__menu li{
+		display: block;
+	}
+
+}
+@media only screen and (max-width: 900px) {
+
+	header{
+		background-position: center;
+	}
+
+	.contenedor-sobre-nosotros{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.sobre-nosotros .contenido-textos{
+		width: 90%;
+
+	}
+	.imagen-about-us{
+		width: 90%;
+	}
+
+	/* galeria*/
+	
+	.imagen-port{
+		width:44% ;
+	}
+
+		/* clientes*/
+
+		.cards{
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.cards .card{
+			width: 90% ;
+		}
+		.cards .card:first-child{
+			margin-bottom: 30px;
+		}
+
+		/*servicios*/
+		.servicio-cont{
+			justify-content: center;
+			flex-direction: column;
+		}
+		.servicio-ind{
+			width:100% ;
+			text-align: center;
+		}
+
+		.servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
+			margin-bottom: 60px;
+
+		}
+
+		.servicio-ind img{
+			width: 90%;
+		}
+ }
+
+ @media only screen and (max-width: 500px){
+	nav{
+		text-align: center;
+		padding: 30px 0 0 0;
+	}
+
+	nav> a{
+		margin-right:  5px;
+
+	}
+
+	.textos-header h1{
+		font-size: 35px;
+	}
+
+	.textos-header h2{
+		font-size: 20px;
+
+	}
+	/*about us*/
+ 
+	.imagen-about-us{
+		margin-bottom: 60%;
+		width: 99%;
+	}
+
+	.sobre-nosotros .contenido-textos{
+		width: 95%;
+	}
+
+	/*galeria*/
+	.imagen-port{
+		width: 95%;
+	}
+
+	/*clientes*/
+	.cards .cards{
+		height: 450px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.contenedor-footer{
+		height: 450px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.content-foo h4{
+		border-bottom:  3px solid #ff0;
+		padding-bottom: 5px;
+		margin-bottom: 10px;	
+	 }
+}
+ 

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./image/logom.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="./css/IndexStyles.css">
+    <script src="js/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
+    <title>Gauss Seidel</title>
+</head>
+<body>
+    <header class="Encabezado">
+                <nav class="nav conteiner" id="nav">
+                    <h2 class="nav_logo">UAEH.</h2>
+                    <ul class="nav_links">
+                        
+                            <li class="nav__menu">
+                                <a href="Index.html" class="nav_link">Inicio</a>
+                            </li>
+                            <li class="nav__menu">
+                                <a href="Analisis.html" class="nav_link">Análisis y Diseños de Sistemas</a>
+                            </li>
+                            <li class="nav__menu">
+                                <a href="Arquitectura.html" class="nav_link">Arquitectura de Computadoras</a>
+                            </li>
+                            <li class="nav__menu">
+                                <a href="Metodo.html" class="nav_link">Métodos Numéricos</a>
+                            </li>
+                    </ul>
+                    <a href="#nav"  class="nav_hamburguer">
+                        <img src="./image/icons8-menu-squared-50.png" class="nav_icono">
+                    </a>
+                    <a href="#"  class="nav_close">
+                        <img src="./image/icons8-cancel-50.png" class="nav_icono">
+                    </a>
+                </nav>
+                <section class="textos-header">
+                    <h1>Gauss Seidel</h1>
+                    <h2>Metodo Numericos</h2>
+                </section>
+                <div class="wave" style="height: 100px; overflow: hidden;" >
+                    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+                        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ffff;"></path>
+                    </svg>
+                </div>
+        </header>
+        <center>
+                <section class="contenedor sobre-nosotros">
+                        <div class="contenedor-sobre-doc">
+                            <img src="./image/gauss.jpg" alt="" class="imagen-about-us">
+                            <div class="contenido-textos">
+                                <h3><span>1</span>¿Que es y para que nos sirve?</h3>  
+                                    <p>
+                                        El metodo de gauss seidel es un metodo muy usando para poder resolver ecuaciones de primer grado usando un grind base de 3x3, por lo que este metodo nos proporciona una forma bastante sencilla y rapida de poder resolver sistemas 3x3 de ecuaciones donde el uso de otros metodos (como sustitucion, igualacion, etc) nos podrian llevar mas tiempo o nos dan un resultado incorrecto o menos preciso.
+                                        La cosa con el metodo Gauss Seidel, es que tiende a manejarse mediante iteraciones, es decir, el uso de una operacion multiples veces. ¿Que quiere decir esto? Bueno, el uso de gauss seidel hace que los resultados sean aproximaciones, no valores exactos, lo cual hace que esto sea la unica desventaja de usar este metodo contra otros similares para la resolucion de sistemas 3x3.
+                                        La ventaja de este metodo es que la seguir la misma operacion para poder resolver estos sistemas, tiende a ser programable con mucha facilidad, por lo que el uso de sistemas para poder obtener el resultado usando este metodo es bastante eficaz.
+                                        A continuacion, les mostramos este pequeño prototipo de sistema que, similar a otros sistemas, puede resolver ecuaciones 3x3 usando este metodo, y aunque podria no se el mejor, es bastante sencillo de usar.
+                                        <br>
+                                        <br>
+                                        A continuacion, se presenta el sistema en forma de formulario.
+                                    </p>
+                            </div>
+                        </div> 
+                </section>
+    </center>
+    <center>     
+        <div class="FormularioPrincipal">
+            <form action="" class="Formulario">
+                <br><label for="" class="TextoLabel">Ecuacion 1: </label>
+                <input type="text" class="Celdas" id="EcuacionUno" placeholder="Ingresa la ecuacion 1 aqui" size="25%"><br><br>
+                <label for="" class="TextoLabel">Ecuacion 2: </label>
+                <input type="text" class="Celdas" id="EcuacionDos" placeholder="Ingresa la ecuacion 2 aqui" size="25%"><br><br>
+                <label for="" class="TextoLabel">Ecuacion 3: </label>
+                <input type="text" class="Celdas" id="EcuacionTres" placeholder="Ingresa la ecuacion 3 aqui" size="25%"><br><br>
+                <label for="" class="TextoLabel">CE: </label>
+                <input type="number" class="Celdas" id="CEtext" placeholder="Ingresa el error Aproximado" size="25%"><br><br><br>
+                <input type="button" value="Calcular" id="BtnCalc" class="Celdas" onclick='Calculus()'></input><br><br>
+                <hr>
+                <br><label for="" class="TextoLabel">Resultados encontrados</label><br><br><br>
+                <label for="" class="TextoLabel">Valor de X: </label>
+                <input type="text" class="Celdas" id="RespuestaEquis"placeholder="Respuesta para X" size="25%" readonly="true"><br><br>
+                <label for="" class="TextoLabel">Valor de Y: </label>
+                <input type="text" class="Celdas" id="RespuestaYe"placeholder="Respuesta para Y" size="25%" readonly="true"><br><br>
+                <label for="" class="TextoLabel">Valor de Z: </label>
+                <input type="text" class="Celdas" id="RespuestaZeta"placeholder="Respuesta para Z" size="25%" readonly="true"><br><br>
+            </form>
+        </div>
+        <div>
+            <canvas class="MyNewGrafic">
+            </canvas>
+        </div>
+    </center>
+    <footer>
+		<div class="contenedor-footer">
+			<div class="content-foo">
+				<h4>Telefono</h4>
+				<p>+525567906617</p>
+			</div>
+			<div class="content-foo">
+				<h4>Email</h4>
+				<p>@SportWears.com.mx</p>
+			</div>
+			<div class="content-foo">
+				<h4>Localidad</h4>
+				<p>Haciendas de tizayuca,Hidalgo,Temascaltepec#136</p>
+			</div>	
+		</div>
+		<h2 class="titulo-final">&copy; Boutique Sport Wears| ROPA DEPORTIVA | Universidad Autónoma del Estado de Hidalgo </h2>
+	</footer>
+    <script src="js/IndexScripts.js"></script>
+</body>
+</html>
